@@ -3,7 +3,7 @@ const jwt = require("jsonwebtoken");
 const protect = (req, res, next) => {
   try {
     // 🍪 Read token from cookie
-   // const token = req.cookies.token;
+   //const token = req.cookies.token;
 
       const authHeader = req.headers.authorization;
 
@@ -16,7 +16,10 @@ const protect = (req, res, next) => {
     }
       
     // Extract token
-    const token = authHeader.split(" ")[1];
+    const token =
+  req.headers.authorization?.startsWith("Bearer ")
+    ? req.headers.authorization.split(" ")[1]
+    : req.cookies?.token;
 
     
     // Verify token
