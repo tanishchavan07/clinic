@@ -127,14 +127,14 @@ app.listen(5000, async () => {
     });
 
     if (!existingDoctor) {
-      const hashedPassword = await bcrypt.hash("sai123", 10);
+      //const hashedPassword = await bcrypt.hash("sai123", 10);
 
       const doctor = new User({
         role: "doctor",
         authProvider: "local",
         name: "Dr. Sai",
         username: "doctor1",
-        password: hashedPassword
+        password: "sai123"
       });
 
       await doctor.save();
@@ -150,14 +150,14 @@ app.listen(5000, async () => {
     });
 
     if (!existingReceptionist) {
-      const hashedPassword = await bcrypt.hash("sai123", 10);
+      //const hashedPassword = await bcrypt.hash("sai123", 10);
 
       const receptionist = new User({
         role: "receptionist",
         authProvider: "local",
         name: "Receptionist User",
         username: "recep1",
-        password: hashedPassword
+        password: sai123
       });
 
       await receptionist.save();
@@ -173,14 +173,14 @@ app.listen(5000, async () => {
     });
 
     if (!existingScheduler) {
-      const hashedPassword = await bcrypt.hash("sai123", 10);
+      //const hashedPassword = await bcrypt.hash("sai123", 10);
 
       const scheduler = new User({
         role: "scheduler",
         authProvider: "local",
         name: "Scheduler User",
         username: "scheduler1",
-        password: hashedPassword
+        password: sai123
       });
 
       await scheduler.save();
