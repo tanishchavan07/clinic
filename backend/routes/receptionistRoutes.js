@@ -120,7 +120,7 @@ router.post("/create-bill",  protect,  allowRole("receptionist"),  async (req, r
       const bill = new Bill({
         appointmentId,
         patientName: appointment.patientName,
-        age: appointment.age,
+        dob: appointment.dob,
         address: appointment.address,
         consultationFees: report.fees,
         medicines,

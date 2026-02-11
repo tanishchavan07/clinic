@@ -259,7 +259,7 @@ const DoctorDashboard = () => {
                     <thead>
                       <tr>
                         <th>Patient Name</th>
-                        <th>Age</th>
+                        <th>Date of Birth</th>
                         <th>Email</th>
                         <th>Time</th>
                         <th>Address</th>
@@ -270,7 +270,7 @@ const DoctorDashboard = () => {
                       {filteredAppointments.map((apt) => (
                         <tr key={apt._id}>
                           <td>{apt.patientName}</td>
-                          <td>{apt.age}</td>
+                          <td>{apt.dob}</td>
                           <td>{apt.patientEmail}</td>
                           <td>{apt.appointmentTime}</td>
                           <td>{apt.address}</td>
@@ -305,7 +305,7 @@ const DoctorDashboard = () => {
 
             <div style={{ background: '#f7fafc', padding: '16px', borderRadius: '12px', marginBottom: '24px' }}>
               <p style={{ marginBottom: '8px', color: '#4a5568' }}><strong>Patient:</strong> {selectedAppointment.patientName}</p>
-              <p style={{ marginBottom: '8px', color: '#4a5568' }}><strong>Age:</strong> {selectedAppointment.age}</p>
+              <p style={{ marginBottom: '8px', color: '#4a5568' }}><strong>Date of Birth:</strong> {new Date(selectedAppointment.dob).toLocaleDateString()}</p>
               <p style={{ color: '#4a5568' }}><strong>Email:</strong> {selectedAppointment.patientEmail}</p>
             </div>
 

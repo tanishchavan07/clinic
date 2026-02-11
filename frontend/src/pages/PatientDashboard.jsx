@@ -9,7 +9,7 @@ const PatientDashboard = () => {
   
   const [formData, setFormData] = useState({
     patientName: '',
-    age: '',
+    dob: '',
     address: '',
     appointmentTime: ''
   });
@@ -18,7 +18,7 @@ const PatientDashboard = () => {
     name: '',
     email: '',
     phone: '',
-    age: '',
+    dob: '',
     gender: '',
     createdAt: ''
   });
@@ -26,7 +26,7 @@ const PatientDashboard = () => {
   const [profileEditData, setProfileEditData] = useState({
     name: '',
     phone: '',
-    age: '',
+    dob: '',
     gender: '',
     oldPassword: '',
     newPassword: ''
@@ -70,7 +70,7 @@ const PatientDashboard = () => {
         setProfileEditData({
           name: data.patient.name,
           phone: data.patient.phone,
-          age: data.patient.age,
+          dob: data.patient.dob,
           gender: data.patient.gender,
           oldPassword: '',
           newPassword: ''
@@ -228,7 +228,7 @@ const PatientDashboard = () => {
         setSuccess(data.message);
         setFormData({
           patientName: '',
-          age: '',
+          dob: '',
           address: '',
           appointmentTime: ''
         });
@@ -370,12 +370,12 @@ const PatientDashboard = () => {
             </div>
 
             <div className="form-group">
-              <label>Age</label>
+              <label>Date of Birth</label>
               <input
-                type="number"
-                placeholder="32"
-                value={formData.age}
-                onChange={(e) => handleInputChange('age', e.target.value)}
+                type="date"
+                placeholder="1990-01-01"
+                value={formData.dob}
+                onChange={(e) => handleInputChange('dob', e.target.value)}
               />
             </div>
 
@@ -435,7 +435,7 @@ const PatientDashboard = () => {
                 </div>
                 <div className="apt-info">
                   <p><strong>Name:</strong> {apt.patientName}</p>
-                  <p><strong>Age:</strong> {apt.age}</p>
+                  <p><strong>Date of Birth:</strong> {new Date(apt.dob).toLocaleDateString()}</p>
                   <p><strong>Time:</strong> {apt.appointmentTime}</p>
                   <p><strong>Address:</strong> {apt.address}</p>
                 </div>
@@ -470,7 +470,7 @@ const PatientDashboard = () => {
                 </div>
                 <div className="apt-info">
                   <p><strong>Name:</strong> {apt.patientName}</p>
-                  <p><strong>Age:</strong> {apt.age}</p>
+                  <p><strong>Date of Birth:</strong> {new Date(apt.dob).toLocaleDateString()}</p>
                   <p><strong>Time:</strong> {apt.appointmentTime}</p>
                   <p><strong>Address:</strong> {apt.address}</p>
                 </div>
@@ -505,7 +505,7 @@ const PatientDashboard = () => {
                 </div>
                 <div className="apt-info">
                   <p><strong>Name:</strong> {apt.patientName}</p>
-                  <p><strong>Age:</strong> {apt.age}</p>
+                  <p><strong>Date of Birth:</strong> {new Date(apt.dob).toLocaleDateString()}</p>
                   <p><strong>Time:</strong> {apt.appointmentTime}</p>
                   <p><strong>Address:</strong> {apt.address}</p>
                 </div>
@@ -540,7 +540,7 @@ const PatientDashboard = () => {
                 </div>
                 <div className="apt-info">
                   <p><strong>Name:</strong> {apt.patientName}</p>
-                  <p><strong>Age:</strong> {apt.age}</p>
+                  <p><strong>Date of Birth:</strong> {new Date(apt.dob).toLocaleDateString()}</p>
                   <p><strong>Time:</strong> {apt.appointmentTime}</p>
                 </div>
                 <div className="apt-actions">
@@ -625,7 +625,7 @@ const PatientDashboard = () => {
                 </div>
                 <div className="apt-info">
                   <p><strong>Name:</strong> {apt.patientName}</p>
-                  <p><strong>Age:</strong> {apt.age}</p>
+                  <p><strong>Date of Birth:</strong> {new Date(apt.dob).toLocaleDateString()}</p>
                   <p><strong>Time:</strong> {apt.appointmentTime}</p>
                 </div>
                 <button 
@@ -675,7 +675,7 @@ const PatientDashboard = () => {
                 <p><strong>Name:</strong> {profileData.name}</p>
                 <p><strong>Email:</strong> {profileData.email}</p>
                 <p><strong>Phone:</strong> {profileData.phone}</p>
-                <p><strong>Age:</strong> {profileData.age}</p>
+                <p><strong>Date of Birth:</strong> {new Date(profileData.dob).toLocaleDateString()}</p>
                 <p><strong>Gender:</strong> {profileData.gender}</p>
                 <p><strong>Member Since:</strong> {new Date(profileData.createdAt).toLocaleDateString()}</p>
               </div>
@@ -722,11 +722,11 @@ const PatientDashboard = () => {
                 </div>
 
                 <div className="form-group">
-                  <label>Age</label>
+                  <label>Date of Birth</label>
                   <input
-                    type="number"
-                    value={profileEditData.age}
-                    onChange={(e) => handleProfileInputChange('age', e.target.value)}
+                    type="date"
+                    value={profileEditData.dob}
+                    onChange={(e) => handleProfileInputChange('dob', e.target.value)}
                   />
                 </div>
 

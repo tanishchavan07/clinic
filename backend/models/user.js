@@ -35,9 +35,14 @@ const userSchema = new mongoose.Schema(
     mobile: {
       type: String
     },
-    age: {
-      type: String
-    },
+    // // age: {
+    //   type: String
+    // },
+    dob: {
+    type: Date,
+    
+  },
+
     gender: {
       type: String
     },

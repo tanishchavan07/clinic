@@ -15,8 +15,8 @@ const billSchema = new mongoose.Schema(
       required: true
     },
 
-    age: {
-      type: Number,
+    dob: {
+      type: Date,
       required: true
     },
 

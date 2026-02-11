@@ -22,7 +22,7 @@ router.get("/patient/create", (req, res) => {
 // PATIENT CREATE
 router.post("/patient/create", async (req, res) => {
   try {
-    const { name, age, gender, email, password, mobile } = req.body;
+    const { name, dob, gender, email, password, mobile } = req.body;
 
     const existingPatient = await User.findOne({ email });
 
@@ -41,7 +41,7 @@ router.post("/patient/create", async (req, res) => {
       role: "patient",
       authProvider: "local",
       name,
-      age,
+      dob,
       gender,
       email,
       password: hashedPassword,
@@ -70,7 +70,7 @@ router.post("/patient/create", async (req, res) => {
       user: {
         name: newPatient.name,
         email: newPatient.email,
-        age: newPatient.age,
+        dob: newPatient.dob,
         gender: newPatient.gender,
         mobile: newPatient.mobile,
         role: newPatient.role
