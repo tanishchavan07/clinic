@@ -157,7 +157,7 @@ app.listen(5000, async () => {
         authProvider: "local",
         name: "Receptionist User",
         username: "recep1",
-        password: sai123
+        password: "sai123"
       });
 
       await receptionist.save();
@@ -180,7 +180,7 @@ app.listen(5000, async () => {
         authProvider: "local",
         name: "Scheduler User",
         username: "scheduler1",
-        password: sai123
+        password: "sai123"
       });
 
       await scheduler.save();
