@@ -118,12 +118,12 @@ const Report = () => {
               <span className="value">{report.patientName}</span>
             </div>
             <div className="info-item">
-              <span className="label">Age:</span>
-              <span className="value">{report.age} years</span>
+              <span className="label">Date of Birth:</span>
+              <span className="value">{new Date(report.dob).toLocaleDateString()}</span>
             </div>
             <div className="info-item">
               <span className="label">Report Date:</span>
-              <span className="value">{report.reportDate}</span>
+              <span className="value">{new Date(report.reportDate).toLocaleDateString()}</span>
             </div>
             <div className="info-item">
               <span className="label">Report Type:</span>

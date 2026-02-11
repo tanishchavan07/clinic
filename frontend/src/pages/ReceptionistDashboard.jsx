@@ -3,7 +3,7 @@ import { getToken, removeToken } from '../utils/auth';
 
 
 const ReceptionistDashboard = () => {
-  const [token] = useState('demo-token'); // Store token in state instead of localStorage
+  //const [token] = useState('demo-token'); // Store token in state instead of localStorage
   const [activeTab, setActiveTab] = useState('appointments');
   const [showProfile, setShowProfile] = useState(false);
   const [appointments, setAppointments] = useState([]);
@@ -318,7 +318,7 @@ const ReceptionistDashboard = () => {
                     <thead>
                       <tr>
                         <th>Patient Name</th>
-                        <th>Age</th>
+                        <th>Date of Birth</th>
                         <th>Email</th>
                         <th>Time</th>
                         <th>Address</th>
@@ -329,7 +329,7 @@ const ReceptionistDashboard = () => {
                       {filteredAppointments.map((apt) => (
                         <tr key={apt._id}>
                           <td>{apt.patientName}</td>
-                          <td>{apt.age}</td>
+                          <td>{new Date(apt.dob).toLocaleDateString()}</td>
                           <td>{apt.patientEmail}</td>
                           <td>{apt.appointmentTime}</td>
                           <td>{apt.address}</td>
@@ -365,7 +365,7 @@ const ReceptionistDashboard = () => {
                     <thead>
                       <tr>
                         <th>Patient Name</th>
-                        <th>Age</th>
+                        <th>Date of Birth</th>
                         <th>Email</th>
                         <th>Time</th>
                         <th>Address</th>
@@ -376,7 +376,7 @@ const ReceptionistDashboard = () => {
                       {filteredPending.map((apt) => (
                         <tr key={apt._id}>
                           <td>{apt.patientName}</td>
-                          <td>{apt.age}</td>
+                          <td>{new Date(apt.dob).toLocaleDateString()}</td>
                           <td>{apt.patientEmail}</td>
                           <td>{apt.appointmentTime}</td>
                           <td>{apt.address}</td>
@@ -415,7 +415,7 @@ const ReceptionistDashboard = () => {
                     <thead>
                       <tr>
                         <th>Patient Name</th>
-                        <th>Age</th>
+                        <th>Date of Birth</th>
                         <th>Email</th>
                         <th>Time</th>
                         <th>Address</th>
@@ -485,8 +485,8 @@ const ReceptionistDashboard = () => {
                       <span className="info-value">{selectedAppointment.patientName}</span>
                     </div>
                     <div className="info-item">
-                      <span className="info-label">Age</span>
-                      <span className="info-value">{selectedAppointment.age}</span>
+                      <span className="info-label">Date of Birth</span>
+                      <span className="info-value">{new Date(selectedAppointment.dob).toLocaleDateString()}</span>
                     </div>
                   </div>
                   <div className="info-row">

@@ -55,7 +55,7 @@ router.post("/make-report",  protect,  allowRole("doctor"),  async (req, res) =>
         appointmentId: appointment._id,
         patientEmail: appointment.patientEmail,
         patientName: appointment.patientName,
-        age: appointment.age,
+        dob: appointment.dob,
         disease,
         symptoms,
         medicines,

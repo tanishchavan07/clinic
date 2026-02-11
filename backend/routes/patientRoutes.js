@@ -13,7 +13,7 @@ router.get("/request", (req, res) => {
 // POST – Submit Appointment Request
 router.post("/request", protect, async (req, res) => {
   try {
-    const { patientName, age, address, appointmentTime } = req.body;
+    const { patientName, dob, address, appointmentTime } = req.body;
 
     // Optional pre-check (fast feedback)
     const slotTaken = await Appointment.findOne({ appointmentTime });
@@ -26,7 +26,7 @@ router.post("/request", protect, async (req, res) => {
 
     const appointment = new Appointment({
       patientName,
-      age,
+      dob,
       address,
       appointmentTime,
       patientEmail: req.user.email
@@ -328,7 +328,7 @@ router.get("/profile",  protect,  async (req, res) => {
           name: 1,
           email: 1,
           phone: 1,
-          age: 1,
+          dob: 1,
           gender: 1,
           createdAt: 1
         }
@@ -361,7 +361,7 @@ router.put("/update-profile",  protect,  async (req, res) => {
       const {
         name,
         phone,
-        age,
+        dob,
         gender,
         oldPassword,
         newPassword
@@ -400,7 +400,7 @@ router.put("/update-profile",  protect,  async (req, res) => {
       // 📝 UPDATE PROFILE FIELDS
       if (name) patient.name = name;
       if (phone) patient.phone = phone;
-      if (age) patient.age = age;
+      if (dob) patient.dob = dob;
       if (gender) patient.gender = gender;
 
       await patient.save();

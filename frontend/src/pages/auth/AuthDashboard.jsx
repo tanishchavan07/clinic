@@ -180,12 +180,12 @@ const App = () => {
         </div>
         <div className="form-row">
           <div className="form-group half">
-            <label>Age</label>
+            <label>Date of Birth</label>
             <input
-              type="number"
+              type="date"
               placeholder="25"
-              value={formData.age}
-              onChange={(e) => setFormData({ ...formData, age: e.target.value })}
+              value={formData.dob}
+              onChange={(e) => setFormData({ ...formData, dob: e.target.value })}
             />
           </div>
           <div className="form-group half">
