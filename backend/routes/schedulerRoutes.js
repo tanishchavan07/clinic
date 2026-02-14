@@ -79,8 +79,8 @@ router.get("/patients",  protect,  allowRole("scheduler"),  async (req, res) => 
         {
           name: 1,
           email: 1,
-          phone: 1,
-          age: 1,
+          mobile: 1,
+          dob: 1,
           gender: 1,
           createdAt: 1
         }

@@ -426,7 +426,7 @@ const ReceptionistDashboard = () => {
                       {filteredHistory.map((apt) => (
                         <tr key={apt._id}>
                           <td>{apt.patientName}</td>
-                          <td>{apt.age}</td>
+                          <td>{new Date(apt.dob).toLocaleDateString()}</td>
                           <td>{apt.patientEmail}</td>
                           <td>{apt.appointmentTime}</td>
                           <td>{apt.address}</td>
