@@ -311,7 +311,7 @@ const SchedulerDashboard = () => {
                       <tr>
                         <th>ID</th>
                         <th>Name</th>
-                        <th>Age</th>
+                        <th>Date of Birth</th>
                         <th>Gender</th>
                         <th>Contact</th>
                         <th>Actions</th>
@@ -322,9 +322,9 @@ const SchedulerDashboard = () => {
                         <tr key={patient._id} style={{ cursor: 'pointer' }} onClick={() => handleViewPatientAppointments(patient.email)}>
                           <td>P{String(idx + 1).padStart(3, '0')}</td>
                           <td>{patient.name}</td>
-                          <td>{patient.age}</td>
+                          <td>{new Date(patient.dob).toLocaleDateString()}</td>
                           <td>{patient.gender}</td>
-                          <td>{patient.phone}</td>
+                          <td>{patient.mobile}</td>
                           <td className="action-icons" onClick={(e) => e.stopPropagation()}>
                             <button className="icon-btn delete-icon" onClick={() => handleDeletePatient(patient._id)} title="Delete Patient">
                               🗑️
