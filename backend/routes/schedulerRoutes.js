@@ -141,7 +141,7 @@ router.get("/patient/:patientEmail/appointments",  protect,  allowRole("schedule
 
       const appointments = await Appointment.find({
         patientEmail,
-        status: { $in: ["Approved", "Reported", "Paid"] }
+        status: { $in: ["Approved", "Reported", "Paid","Pending"] }
       });
 
       res.json({
