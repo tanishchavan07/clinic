@@ -198,7 +198,8 @@ app.listen(5000, async () => {
 
 
 app.use(cors({
-  origin: "http://localhost:3000", // React frontend
+  origin: "http://localhost:3000" && "https://clinic-one-rosy.vercel.app/",
+   // React frontend
                 // Allow cookies
 }));
 
