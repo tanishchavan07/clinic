@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {setToken} from '../../utils/auth';
-import API_BASE_URL from '../../services/api';
+import API_BASE_URL from '../services/api';
 
 const App = () => {
   const navigate = useNavigate();
