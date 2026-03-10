@@ -15,7 +15,7 @@ const SchedulerDashboard = () => {
   const [reports, setReports] = useState([]);
   const [selectedReport, setSelectedReport] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
-  const [loading, setLoading] = useState(false);
+  
 
   useEffect(() => {
     if (activeTab === 'appointments') {
