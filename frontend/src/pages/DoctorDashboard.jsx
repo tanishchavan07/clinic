@@ -31,7 +31,7 @@ const DoctorDashboard = () => {
 
   const fetchAppointments = async () => {
     try {
-      const res = await fetch('${API_BASE_URL}/doctor/appointments', {
+      const res = await fetch(`${API_BASE_URL}/doctor/appointments`, {
         headers: { Authorization: `Bearer ${getToken()}` }
       });
       const data = await res.json();

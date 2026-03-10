@@ -62,7 +62,7 @@ const PatientDashboard = () => {
 
   const fetchProfile = async () => {
     try {
-      const response = await fetch('${API_BASE_URL}/patient/profile', {
+      const response = await fetch(`${API_BASE_URL}/patient/profile`, {
         headers: {
           Authorization: `Bearer ${getToken()}`
         }
@@ -100,7 +100,7 @@ const PatientDashboard = () => {
     setSuccess('');
 
     try {
-      const response = await fetch('${API_BASE_URL}/patient/update-profile', {
+      const response = await fetch(`${API_BASE_URL}/patient/update-profile`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -130,7 +130,7 @@ const PatientDashboard = () => {
 
   const fetchApprovedAppointments = async () => {
     try {
-      const response = await fetch('${API_BASE_URL}/patient/view-approved', {
+      const response = await fetch(`${API_BASE_URL}/patient/view-approved`, {
         headers: {
           Authorization: `Bearer ${getToken()}`
         }
@@ -146,7 +146,7 @@ const PatientDashboard = () => {
 
   const fetchPendingAppointments = async () => {
     try {
-      const response = await fetch('${API_BASE_URL}/patient/pending', {
+      const response = await fetch(`${API_BASE_URL}/patient/pending`, {
         headers: {
           Authorization: `Bearer ${getToken()}`
         }
@@ -163,7 +163,7 @@ const PatientDashboard = () => {
 
   const fetchRejectedAppointments = async () => {
     try {
-      const response = await fetch('${API_BASE_URL}/patient/pending', {
+      const response = await fetch(`${API_BASE_URL}/patient/pending`, {
         headers: {
           Authorization: `Bearer ${getToken()}`
         }
@@ -180,7 +180,7 @@ const PatientDashboard = () => {
 
   const fetchActiveAppointments = async () => {
     try {
-      const response = await fetch('${API_BASE_URL}/patient/appointments/active', {
+      const response = await fetch(`${API_BASE_URL}/patient/appointments/active`, {
         headers: {
           Authorization: `Bearer ${getToken()}`
         }
@@ -196,7 +196,7 @@ const PatientDashboard = () => {
 
   const fetchHistory = async () => {
     try {
-      const response = await fetch('${API_BASE_URL}/patient/history', {
+      const response = await fetch(`${API_BASE_URL}/patient/history`, {
         headers: {
           Authorization: `Bearer ${getToken()}`
         }
@@ -216,7 +216,7 @@ const PatientDashboard = () => {
     setSuccess('');
 
     try {
-      const response = await fetch('${API_BASE_URL}/patient/request', {
+      const response = await fetch(`${API_BASE_URL}/patient/request`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
