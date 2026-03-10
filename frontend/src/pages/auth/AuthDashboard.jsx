@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {setToken} from '../../utils/auth';
 import API_BASE_URL from '../../services/api';
+
 const App = () => {
   const navigate = useNavigate();
   const [view, setView] = useState('select');
@@ -121,7 +122,7 @@ const App = () => {
       setSuccess('');
 
       try {
-        const response = await fetch('/auth/patient/create', {
+        const response = await fetch('${API_BASE_URL}/auth/patient/create', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
