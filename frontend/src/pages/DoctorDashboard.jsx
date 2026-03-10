@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { getToken, removeToken } from '../utils/auth';
-import API_BASE_URL from '../../services/api';
+
+import API_BASE_URL from '../services/api';
 const DoctorDashboard = () => {
   const [activeTab, setActiveTab] = useState('appointments');
   const [showProfile, setShowProfile] = useState(false);
