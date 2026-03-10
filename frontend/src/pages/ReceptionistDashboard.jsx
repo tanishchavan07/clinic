@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getToken, removeToken } from '../utils/auth';
-import API_BASE_URL from '../../services/api';
+import API_BASE_URL from '../services/api';
 
 const ReceptionistDashboard = () => {
   //const [token] = useState('demo-token'); // Store token in state instead of localStorage
