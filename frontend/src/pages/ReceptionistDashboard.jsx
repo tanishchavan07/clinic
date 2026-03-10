@@ -44,7 +44,7 @@ const ReceptionistDashboard = () => {
 
   const fetchPendingPayments = async () => {
     try {
-      const res = await fetch('${API_BASE_URL}/receptionist/Unpaid', {
+      const res = await fetch(`${API_BASE_URL}/receptionist/Unpaid`, {
         headers: { Authorization: `Bearer ${getToken()}` }
       });
       const data = await res.json();
