@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { getToken, removeToken } from '../utils/auth';
 import { useNavigate } from 'react-router-dom';
 
-import API_BASE_URL from '../services/api';
+import API_BASE_URL from '../../services/api';
 
 const PatientDashboard = () => {
   const navigate = useNavigate();

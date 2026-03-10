@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import API_BASE_URL from '../services/api';
+import API_BASE_URL from '../../services/api';
 const Report = () => {
   const [report, setReport] = useState(null);
   const [loading, setLoading] = useState(true);
