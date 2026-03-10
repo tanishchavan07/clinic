@@ -122,7 +122,7 @@ const App = () => {
       setSuccess('');
 
       try {
-        const response = await fetch('${API_BASE_URL}/auth/patient/create', {
+        const response = await fetch(`${API_BASE_URL}/auth/patient/create`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
