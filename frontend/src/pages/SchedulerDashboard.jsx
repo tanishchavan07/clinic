@@ -29,7 +29,7 @@ const SchedulerDashboard = () => {
 
   const fetchPendingAppointments = async () => {
     try {
-      const res = await fetch('${API_BASE_URL}/scheduler/pending', {
+      const res = await fetch(`${API_BASE_URL}/scheduler/pending`, {
         headers: { Authorization: `Bearer ${getToken()}` }
       });
       const data = await res.json();
@@ -41,7 +41,7 @@ const SchedulerDashboard = () => {
 
   const fetchPatients = async () => {
     try {
-      const res = await fetch('${API_BASE_URL}/scheduler/patients', {
+      const res = await fetch(`${API_BASE_URL}/scheduler/patients`, {
         headers: { Authorization: `Bearer ${getToken()}` }
       });
       const data = await res.json();
@@ -53,7 +53,7 @@ const SchedulerDashboard = () => {
 
   const fetchReportTypes = async () => {
     try {
-      const res = await fetch('${API_BASE_URL}/scheduler/report-types', {
+      const res = await fetch(`${API_BASE_URL}/scheduler/report-types`, {
         headers: { Authorization: `Bearer ${getToken()}` }
       });
       const data = await res.json();
@@ -65,7 +65,7 @@ const SchedulerDashboard = () => {
 
   const handleUpdateStatus = async (appointmentId, action) => {
     try {
-      const res = await fetch('${API_BASE_URL}/scheduler/update-status', {
+      const res = await fetch(`${API_BASE_URL}/scheduler/update-status`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

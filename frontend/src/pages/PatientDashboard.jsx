@@ -302,7 +302,7 @@ const PatientDashboard = () => {
 
   const handlePayBill = async (appointmentId) => {
     try {
-      const response = await fetch('${API_BASE_URL}/patient/pay-bill', {
+      const response = await fetch(`${API_BASE_URL}/patient/pay-bill`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
