@@ -31,7 +31,7 @@ const ReceptionistDashboard = () => {
 
   const fetchAppointments = async () => {
     try {
-      const res = await fetch('${API_BASE_URL}/receptionist/appointments', {
+      const res = await fetch(`${API_BASE_URL}/receptionist/appointments`, {
         headers: { Authorization: `Bearer ${getToken()}` }
       });
       const data = await res.json();
@@ -56,7 +56,7 @@ const ReceptionistDashboard = () => {
 
   const fetchHistory = async () => {
     try {
-      const res = await fetch('${API_BASE_URL}/receptionist/history', {
+      const res = await fetch(`${API_BASE_URL}/receptionist/history`, {
         headers: { Authorization: `Bearer ${getToken()}` }
       });
       const data = await res.json();
@@ -123,7 +123,7 @@ const ReceptionistDashboard = () => {
     setSuccess('');
 
     try {
-      const res = await fetch('${API_BASE_URL}/receptionist/create-bill', {
+      const res = await fetch(`${API_BASE_URL}/receptionist/create-bill`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -158,7 +158,7 @@ const ReceptionistDashboard = () => {
 
   const handleSendReminder = async (appointmentId, email) => {
     try {
-      const res = await fetch('${API_BASE_URL}/receptionist/send-payment-reminder', {
+      const res = await fetch(`${API_BASE_URL}/receptionist/send-payment-reminder`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
