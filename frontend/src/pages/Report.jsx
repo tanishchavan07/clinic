@@ -20,7 +20,7 @@ const Report = () => {
         // Get token - replace this with your actual auth implementation
         const token = localStorage.getItem('token'); // or use your getToken() function
         
-        const response = await fetch(`http://localhost:5000/patient/report/${appointmentId}`, {
+        const response = await fetch(`${API_BASE_URL}/patient/report/${appointmentId}`, {
           headers: {
             'Authorization': `Bearer ${token}`,
             'Content-Type': 'application/json'
