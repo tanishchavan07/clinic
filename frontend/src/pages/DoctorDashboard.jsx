@@ -30,7 +30,7 @@ const DoctorDashboard = () => {
 
   const fetchAppointments = async () => {
     try {
-      const res = await fetch('http://localhost:5000/doctor/appointments', {
+      const res = await fetch('${API_BASE_URL}/doctor/appointments', {
         headers: { Authorization: `Bearer ${getToken()}` }
       });
       const data = await res.json();
@@ -59,7 +59,7 @@ const DoctorDashboard = () => {
   const handleCancelAppointment = async (appointmentId) => {
     if (!window.confirm('Are you sure you want to cancel this appointment?')) return;
     try {
-      const res = await fetch('http://localhost:5000/doctor/cancel-appointment', {
+      const res = await fetch('${API_BASE_URL}/doctor/cancel-appointment', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -110,7 +110,7 @@ const DoctorDashboard = () => {
     }
 
     try {
-      const res = await fetch('http://localhost:5000/doctor/make-report', {
+      const res = await fetch('${API_BASE_URL}/doctor/make-report', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

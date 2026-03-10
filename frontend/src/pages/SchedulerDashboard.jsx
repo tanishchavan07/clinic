@@ -29,7 +29,7 @@ const SchedulerDashboard = () => {
 
   const fetchPendingAppointments = async () => {
     try {
-      const res = await fetch('http://localhost:5000/scheduler/pending', {
+      const res = await fetch('${API_BASE_URL}/scheduler/pending', {
         headers: { Authorization: `Bearer ${getToken()}` }
       });
       const data = await res.json();
@@ -41,7 +41,7 @@ const SchedulerDashboard = () => {
 
   const fetchPatients = async () => {
     try {
-      const res = await fetch('http://localhost:5000/scheduler/patients', {
+      const res = await fetch('${API_BASE_URL}/scheduler/patients', {
         headers: { Authorization: `Bearer ${getToken()}` }
       });
       const data = await res.json();
@@ -53,7 +53,7 @@ const SchedulerDashboard = () => {
 
   const fetchReportTypes = async () => {
     try {
-      const res = await fetch('http://localhost:5000/scheduler/report-types', {
+      const res = await fetch('${API_BASE_URL}/scheduler/report-types', {
         headers: { Authorization: `Bearer ${getToken()}` }
       });
       const data = await res.json();
@@ -65,7 +65,7 @@ const SchedulerDashboard = () => {
 
   const handleUpdateStatus = async (appointmentId, action) => {
     try {
-      const res = await fetch('http://localhost:5000/scheduler/update-status', {
+      const res = await fetch('${API_BASE_URL}/scheduler/update-status', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -88,7 +88,7 @@ const SchedulerDashboard = () => {
   const handleDeletePatient = async (patientId) => {
     if (!window.confirm('Are you sure you want to delete this patient?')) return;
     try {
-      const res = await fetch(`http://localhost:5000/scheduler/patient/${patientId}`, {
+      const res = await fetch(`${API_BASE_URL}/scheduler/patient/${patientId}`, {
         method: 'DELETE',
         headers: { Authorization: `Bearer ${getToken()}` }
       });
@@ -106,7 +106,7 @@ const SchedulerDashboard = () => {
 
   const handleViewPatientAppointments = async (patientEmail) => {
     try {
-      const res = await fetch(`http://localhost:5000/scheduler/patient/${patientEmail}/appointments`, {
+      const res = await fetch(`${API_BASE_URL}/scheduler/patient/${patientEmail}/appointments`, {
         headers: { Authorization: `Bearer ${getToken()}` }
       });
       const data = await res.json();
@@ -121,7 +121,7 @@ const SchedulerDashboard = () => {
 
   const handleViewReports = async (type) => {
     try {
-      const res = await fetch(`http://localhost:5000/scheduler/reports/${type}`, {
+      const res = await fetch(`${API_BASE_URL}/scheduler/reports/${type}`, {
         headers: { Authorization: `Bearer ${getToken()}` }
       });
       const data = await res.json();
@@ -136,7 +136,7 @@ const SchedulerDashboard = () => {
 
   const handleViewSingleReport = async (appointmentId) => {
     try {
-      const res = await fetch(`http://localhost:5000/patient/report/${appointmentId}`, {
+      const res = await fetch(`${API_BASE_URL}/patient/report/${appointmentId}`, {
         headers: { Authorization: `Bearer ${getToken()}` }
       });
       const data = await res.json();

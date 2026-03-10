@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {setToken} from '../../utils/auth';
-
+import API_BASE_URL from '../../services/api';
 const App = () => {
   const navigate = useNavigate();
   const [view, setView] = useState('select');
@@ -33,7 +33,7 @@ const App = () => {
       setSuccess('');
 
       try {
-        const response = await fetch('http://localhost:5000/auth/patient/login', {
+        const response = await fetch(`${API_BASE_URL}/auth/patient/login`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -121,7 +121,7 @@ const App = () => {
       setSuccess('');
 
       try {
-        const response = await fetch('http://localhost:5000/auth/patient/create', {
+        const response = await fetch('/auth/patient/create', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -160,7 +160,7 @@ const App = () => {
           setTimeout(() => setError(''), 3000);
         }
       } catch (err) {
-        setError('Network error. Please ensure backend is running on port 5000.');
+        setError(err);
         setTimeout(() => setError(''), 3000);
       } finally {
         setLoading(false);
