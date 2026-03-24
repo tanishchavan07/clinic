@@ -36,6 +36,9 @@ A full-stack **Clinic Management System** built using the MERN stack to streamli
   * JWT-based authentication
   * Password hashing using bcrypt
 
+
+---    
+Project Url : https://clinic-one-rosy.vercel.app/
 ---
 
 ## 🛠️ Tech Stack
