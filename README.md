@@ -65,23 +65,7 @@ Project Url : https://clinic-one-rosy.vercel.app/
 
 ---
 
-## 📂 Project Structure
 
-```
-clinic-management-system/
-│── backend/
-│   ├── models/
-│   ├── routes/
-│   ├── controllers/
-│   └── server.js
-│
-│── frontend/
-│   ├── components/
-│   ├── pages/
-│   └── App.js
-│
-│── README.md
-```
 
 ---
 
