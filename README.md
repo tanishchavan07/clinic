@@ -1,6 +1,6 @@
 # 🏥 Clinic Management System
 
-A full-stack **Clinic Management System** built using the MERN stack to streamline healthcare operations like appointment booking, patient management, billing, and medical records.
+A full-stack **Clinic Management System** built using the MERN stack to streamline healthcare operations like appointment booking, patient management, billing, and medical records ..
 
 ---
 
