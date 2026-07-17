@@ -277,7 +277,7 @@ const App = () => {
 
       console.log('Staff login success:', data);
 
-      // 🎯 ROLE BASED REDIRECT
+      // 🎯 ROLE BASED REDIRECTb
       setTimeout(() => {
         switch (data.user.role) {
           case 'doctor':
