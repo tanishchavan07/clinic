@@ -103,7 +103,7 @@ const DoctorDashboard = () => {
     setError('');
     setSuccess('');
 
-    // Validation
+    // Validation security
     if (!reportData.disease || !reportData.fees || !reportData.reportType || !reportData.reportDate) {
       setError('Please fill all required fields');
       setLoading(false);
